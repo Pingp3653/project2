@@ -5,71 +5,71 @@ const nav = document.getElementById('nav'),
 
 /* Menu show */
 if(headerMenu){
-    navToggle.addEventListener('click', () =>{
-        navMenu.classList.add('show-menu')
-    })
+   headerMenu.addEventListener('click', () =>{
+      nav.classList.add('show-menu')
+   })
 }
 
 /* Menu hidden */
 if(navClose){
-    headerMenu.addEventListener('click', () =>{
-        nav.classList.remove('show-menu')
-    })
+    navClose.addEventListener('click', () =>{
+      nav.classList.remove('show-menu')
+   })
 }
 
 /*=============== SWIPER MOVIE ===============*/
 let swiperMovie = new Swiper('.movie__swiper', {
-    loop: true,
-    grabCursor: 2,
-    slidesPerView: 2,
-    spaceBetween: 24,
+   loop: true,
+   grabCursor: true,
+   slidesPerView: 2,
+   spaceBetween: 24,
 
-    breakpoints:{
-        440:{
-            slidesPerView: 'auto',
-        },
-        768:{
-            slidesPerView: 4,
-        },
-        1200:{
-            slidesPerView: 5,
-        }
-    }
+   breakpoints:{
+      440: {
+         slidesPerView: 'auto',
+      },
+      768: {
+         slidesPerView: 4,
+      },
+      1200: {
+         slidesPerView: 5,
+      },
+   },
 })
 
 /*=============== SWIPER NEW ===============*/
 let swiperNew = new Swiper('.new__swiper', {
-    loop: true,
-    grabCursor: 2,
-    slidesPerView: 2,
-    centeredSlides: true,
+   loop: true,
+   grabCursor: true,
+   centeredSlides: true,
+   slidesPerView: 2,
 
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
+   pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+   },
 
-    breakpoints:{
-        440:{
-            slidesPerView: 'auto',
-            centeredSlides: false,
-        },
-        768:{
-            slidesPerView: 4,
-            centeredSlides: false,
-        },
-        1200:{
-            slidesPerView: 5,
-            centeredSlides: false,
-        }
-    }
+   breakpoints:{
+      440: {
+         centeredSlides: false,
+         slidesPerView: 'auto',
+      },
+      768: {
+         centeredSlides: false,
+         slidesPerView: 4,
+      },
+      1200: {
+         centeredSlides: false,
+         slidesPerView: 5,
+      },
+   },
 })
 
 /*=============== ADD BLUR HEADER ===============*/
-const blueHeader = () =>{
-    const header = document.getElementById('header')
-    // Add a class if the bottom offset is greater than 50 of the viewport
-    this.scrollY >= 50 ? header.classList.add('blue-header') 
-                       : header.classList.remove('blue-header')
+const blurHeader = () =>{
+   const header = document.getElementById('header')
+   // Add a class if the bottom offset is greater than 50 of the viewport
+   this.scrollY >= 50 ? header.classList.add('blur-header') 
+                      : header.classList.remove('blur-header')
 }
-window.addEventListener('scroll', blueHeader)
+window.addEventListener('scroll', blurHeader)
